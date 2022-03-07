@@ -28,7 +28,7 @@ const Login = () => {
     setIsLoading(true);
     if (email) {
       if (email.includes("@") && email.includes(".com")) {
-        setUserMsg("Redirecting...");
+        setUserMsg("Waiting for magic link...");
 
         try {
           const didToken = await magic.auth.loginWithMagicLink({
@@ -38,7 +38,7 @@ const Login = () => {
             router.push("/");
           }
         } catch (error) {
-          console.error("Something went wrong", error);
+          // console.error("Something went wrong", error);
           setIsLoading(false);
         }
       } else {

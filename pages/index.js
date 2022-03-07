@@ -52,14 +52,10 @@ export default function Home({
           <SectionCards title="Disney" videos={disneyVideos} size="large" />
           <SectionCards
             title="Productivity"
-            videos={travelVideos}
+            videos={productivityVideos}
             size="medium"
           />
-          <SectionCards
-            title="Travel"
-            videos={productivityVideos}
-            size="small"
-          />
+          <SectionCards title="Travel" videos={travelVideos} size="small" />
           <SectionCards
             title="Denis Catalin KTMS"
             videos={myVideos}

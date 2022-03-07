@@ -13,15 +13,17 @@ const NavBar = () => {
 
   useEffect(async () => {
     try {
-      const { email, publicAddress } = await magic.user.getMetadata();
-      console.log({ email, publicAddress });
+      const { email, issuer } = await magic.user.getMetadata();
+      const didToken = await magic.user.getIdToken();
+      console.log({ email, issuer });
+      console.log({ didToken });
 
       if (email) {
         setUsername(email);
         setLoggedIn(true);
       }
     } catch (error) {
-      console.error("Can't retrieve email in NavBar", error);
+      // console.error("Can't retrieve email in NavBar", error);
     }
   }, []);
 
@@ -46,10 +48,10 @@ const NavBar = () => {
     e.preventDefault();
     try {
       await magic.user.logout();
-      console.log(await magic.user.isLoggedIn());
+      // console.log(await magic.user.isLoggedIn());
       setLoggedIn(false);
     } catch (err) {
-      console.error("Something went wrong while logging out", err);
+      // console.error("Something went wrong while logging out", err);
     }
     router.push("/login");
   };
