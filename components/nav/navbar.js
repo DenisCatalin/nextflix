@@ -27,8 +27,6 @@ const NavBar = () => {
     try {
       const { email, issuer } = await magic.user.getMetadata();
       const didToken = await magic.user.getIdToken();
-      console.log({ email, issuer });
-      console.log({ didToken });
 
       if (email) {
         setUsername(email);
@@ -42,7 +40,6 @@ const NavBar = () => {
   useEffect(async () => {
     const myVideos = await getVideos(submittedContent);
     setSearchResult(myVideos);
-    console.log({ myVideos });
   }, [submittedContent]);
 
   const [showDropdown, setShowDropdown] = useState(false);

@@ -45,7 +45,6 @@ const Login = () => {
 
             const loggedInResponse = await response.json();
             if (loggedInResponse.done) {
-              console.log({ loggedInResponse });
               router.push("/");
             } else {
               console.error("Something went wrong");

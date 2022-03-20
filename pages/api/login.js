@@ -26,7 +26,6 @@ export default async function login(req, res) {
       );
 
       const isNewUserQuery = await isNewUser(token, metadata.issuer);
-      console.log("User nou: ", isNewUserQuery);
       isNewUserQuery && (await createNewUser(token, metadata));
       setTokenCookie(token, res);
       res.send({ done: true });
