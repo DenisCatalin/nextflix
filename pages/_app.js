@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(async () => {
     const isLoggedIn = await magic.user.isLoggedIn();
     if (isLoggedIn) {
-      router.push("/");
+      // router.push("/");
     } else {
       router.push("/login");
     }
